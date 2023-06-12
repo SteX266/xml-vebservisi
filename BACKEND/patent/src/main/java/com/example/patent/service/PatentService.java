@@ -150,9 +150,14 @@ public class PatentService {
         List<Prijava> answeredRequests = new ArrayList<>();
         List<Decision> allDecisions = patentRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if(allDecisions == null){
+            return answeredRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if(allRequests == null){
+            return answeredRequests;
         }
         for (Prijava prijava:allRequests){
             String brojPrijave = prijava.getDetaljiPrijave().getBrojPrijave();
@@ -178,6 +183,9 @@ public class PatentService {
         }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if(allRequests == null){
+            return unansweredRequests;
         }
         for (Prijava prijava:allRequests){
             if(!answeredRequestsIds.contains(prijava.getDetaljiPrijave().getBrojPrijave())){

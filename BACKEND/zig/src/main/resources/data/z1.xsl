@@ -291,7 +291,7 @@
                         <td class="center_cells" colspan="2">
                             <xsl:variable name="tip_ziga" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_ziga"/>
                             <xsl:choose>
-                                <xsl:when test="$tip_ziga='INDIVIDUALNI_ZIG'">
+                                <xsl:when test="$tip_ziga='INDIVIDUALNI'">
                                     <p class="center_paragraphs">
                                         X
 
@@ -310,7 +310,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="tip_ziga" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_ziga"/>
                             <xsl:choose>
-                                <xsl:when test="$tip_ziga='KOLEKTIVNI_ZIG'">
+                                <xsl:when test="$tip_ziga='KOLEKTIVNI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>
@@ -330,7 +330,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="tip_ziga" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_ziga"/>
                             <xsl:choose>
-                                <xsl:when test="$tip_ziga='GARANTNI_ZIG'">
+                                <xsl:when test="$tip_ziga='GARANTNI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>
@@ -353,7 +353,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="vrsta_znaka" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_znaka"/>
                             <xsl:choose>
-                                <xsl:when test="$vrsta_znaka='VERBALNI_ZNAK'">
+                                <xsl:when test="$vrsta_znaka='VERBALNI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>
@@ -372,7 +372,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="vrsta_znaka" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_znaka"/>
                             <xsl:choose>
-                                <xsl:when test="$vrsta_znaka='GRAFICKI_ZNAK'">
+                                <xsl:when test="$vrsta_znaka='GRAFICKI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>
@@ -391,7 +391,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="vrsta_znaka" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_znaka"/>
                             <xsl:choose>
-                                <xsl:when test="$vrsta_znaka='KOMBINOVANI_ZNAK'">
+                                <xsl:when test="$vrsta_znaka='KOMBINOVANI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>
@@ -410,7 +410,7 @@
                         <td class="full_screen" colspan="2">
                             <xsl:variable name="vrsta_znaka" select="zig:Prijava/zig:Informacije_o_zigu/zig:Tip_znaka"/>
                             <xsl:choose>
-                                <xsl:when test="$vrsta_znaka='TRODIMENZIONALNI_ZNAK'">
+                                <xsl:when test="$vrsta_znaka='TRODIMENZIONALNI'">
                                     <p class="center_paragraphs">
                                         X
                                     </p>

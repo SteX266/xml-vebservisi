@@ -157,9 +157,14 @@ public class TrademarkService {
         List<Prijava> answeredRequests = new ArrayList<>();
         List<Decision> allDecisions = zigRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if (allDecisions == null){
+            return answeredRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if (allRequests == null){
+            return answeredRequests;
         }
         for (Prijava prijava:allRequests){
             String brojPrijave = prijava.getInformacijaZavoda().getBrojPrijave();
@@ -179,9 +184,14 @@ public class TrademarkService {
         List<Prijava> unansweredRequests = new ArrayList<>();
         List<Decision> allDecisions = zigRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if (allDecisions == null){
+            return allRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if(allRequests == null){
+            return unansweredRequests;
         }
         for (Prijava prijava:allRequests){
             if(!answeredRequestsIds.contains(prijava.getInformacijaZavoda().getBrojPrijave())){

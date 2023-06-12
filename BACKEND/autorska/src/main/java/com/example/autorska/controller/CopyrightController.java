@@ -81,7 +81,7 @@ public class CopyrightController {
     }
 
 
-    @GetMapping(value = "createDocuments/{id}")
+    @PostMapping(value = "createDocuments/{id}")
     public void createDocuments(@PathVariable String id) throws DocumentException, IOException {
 
         copyrightService.createDocuments(id);

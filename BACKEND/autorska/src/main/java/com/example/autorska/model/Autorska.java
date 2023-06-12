@@ -136,7 +136,7 @@ import java.util.List;
     "potpis",
     "detaljiPrijave"
 })
-@XmlRootElement(name = "autorksa")
+@XmlRootElement(name = "autorksa",namespace = "http://www.ftn.uns.ac.rs/autorksa")
 public class Autorska {
 
     @XmlElement(name = "podnosilac_prijave", required = true)

@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.*;
     "detaljiPrijave",
     "zahtev"
 })
-@XmlRootElement(name = "prijava")
+@XmlRootElement(name = "prijava",namespace = "http://www.ftn.uns.ac.rs/patent")
 public class Prijava {
 
     @XmlElement(name = "detalji_prijave", required = true)

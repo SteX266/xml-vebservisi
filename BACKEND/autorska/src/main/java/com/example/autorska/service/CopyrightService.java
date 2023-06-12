@@ -154,9 +154,14 @@ public class CopyrightService {
         List<Autorska> answeredRequests = new ArrayList<>();
         List<Decision> allDecisions = autorskaRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if (allDecisions == null){
+            return answeredRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if (allRequests == null){
+            return answeredRequests;
         }
         for (Autorska prijava:allRequests){
             String brojPrijave = prijava.getDetaljiPrijave().getBrojPrijave();
@@ -176,9 +181,14 @@ public class CopyrightService {
         List<Autorska> unansweredRequests = new ArrayList<>();
         List<Decision> allDecisions = autorskaRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if (allDecisions == null){
+            return allRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
+        }
+        if (allRequests == null){
+            return unansweredRequests;
         }
         for (Autorska prijava:allRequests){
             if(!answeredRequestsIds.contains(prijava.getDetaljiPrijave().getBrojPrijave())){
