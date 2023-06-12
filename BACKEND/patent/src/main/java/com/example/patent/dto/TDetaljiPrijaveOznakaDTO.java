@@ -15,6 +15,8 @@ public class TDetaljiPrijaveOznakaDTO {
     public String brojPrijave;
     public XMLGregorianCalendar datumPodnosenja;
 
+
+
     public TDetaljiPrijaveOznakaDTO(TDetaljiPrijaveOznaka detaljiPrijaveOznaka) {
         this.dvoslovnaOznaka = detaljiPrijaveOznaka.getDvoslovnaOznaka();
         this.brojPrijave = detaljiPrijaveOznaka.getBrojPrijave();

@@ -444,6 +444,7 @@ public class TZahtev {
         protected List<TDetaljiPrijaveOznaka> prethodnaPrijava;
 
         public PrethodnePrijave(PrethodnePrijaveDTO prethodnePrijave) {
+            this.prethodnaPrijava = new ArrayList<>();
             for (TDetaljiPrijaveOznakaDTO tDetaljiPrijaveOznakaDTO : prethodnePrijave.detaljiPrijaveOznaka) {
                 this.prethodnaPrijava.add(new TDetaljiPrijaveOznaka(tDetaljiPrijaveOznakaDTO));
             }
@@ -451,6 +452,13 @@ public class TZahtev {
 
         public PrethodnePrijave(){
             this.prethodnaPrijava = new ArrayList<>();
+        }
+
+        public PrethodnePrijave(List<TDetaljiPrijaveOznakaDTO> prethodnePrijave) {
+            this.prethodnaPrijava = new ArrayList<>();
+            for (TDetaljiPrijaveOznakaDTO tDetaljiPrijaveOznakaDTO : prethodnePrijave) {
+                this.prethodnaPrijava.add(new TDetaljiPrijaveOznaka(tDetaljiPrijaveOznakaDTO));
+            }
         }
 
         /**

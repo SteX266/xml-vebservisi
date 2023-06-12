@@ -6,14 +6,17 @@ import com.example.patent.model.TZahtev;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
 public class PrethodnePrijaveDTO {
 
     public List<TDetaljiPrijaveOznakaDTO> detaljiPrijaveOznaka;
 
+    public PrethodnePrijaveDTO() {
+        this.detaljiPrijaveOznaka = new ArrayList<>();
+    }
     public PrethodnePrijaveDTO(TZahtev.PrethodnePrijave prethodnePrijave) {
         for (TDetaljiPrijaveOznaka detaljiPrijaveOznaka : prethodnePrijave.getPrethodnaPrijava()) {
             this.detaljiPrijaveOznaka.add(new TDetaljiPrijaveOznakaDTO(detaljiPrijaveOznaka));

@@ -2,12 +2,15 @@ package com.example.patent.dto;
 
 
 import com.example.patent.model.Prijava;
+import com.example.patent.model.TDetaljiPrijaveOznaka;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,7 +28,9 @@ public class PatentRequestDTO {
     private NacinDostavljanjaDTO nacinDostavljanja;
     private String tipPrijave;
     private TDetaljiPrijaveDTO prvobitnaPrijava;
-    private PrethodnePrijaveDTO prethodnePrijave;
+
+    private List<TDetaljiPrijaveOznakaDTO> prethodnePrijave;
+
     private boolean dodatniPodaci;
 
     public PatentRequestDTO(Prijava prijava){
@@ -38,7 +43,10 @@ public class PatentRequestDTO {
         this.nacinDostavljanja = new NacinDostavljanjaDTO(prijava.getZahtev().getNacinDostavljanja());
         this.tipPrijave = prijava.getZahtev().getTipPrijave();
         this.prvobitnaPrijava = new TDetaljiPrijaveDTO(prijava.getZahtev().getPrvobitnaPrijava());
-        this.prethodnePrijave = new PrethodnePrijaveDTO(prijava.getZahtev().getPrethodnePrijave());
+        this.prethodnePrijave = new ArrayList<>();
+        for(TDetaljiPrijaveOznaka oznaka : prijava.getZahtev().getPrethodnePrijave().getPrethodnaPrijava()){
+            this.prethodnePrijave.add(new TDetaljiPrijaveOznakaDTO(oznaka));
+        }
         this.dodatniPodaci = prijava.getZahtev().isDodatniPodaci();
 
 
@@ -56,7 +64,6 @@ public class PatentRequestDTO {
                 ", nacinDostavljanja=" + nacinDostavljanja +
                 ", tipPrijave='" + tipPrijave + '\'' +
                 ", prvobitnaPrijava=" + prvobitnaPrijava +
-                ", prethodnePrijave=" + prethodnePrijave +
                 ", dodatniPodaci=" + dodatniPodaci +
                 '}';
     }

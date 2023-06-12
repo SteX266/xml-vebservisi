@@ -173,7 +173,9 @@ public class PatentService {
         List<Prijava> unansweredRequests = new ArrayList<>();
         List<Decision> allDecisions = patentRepository.getAllDecisions();
         List<String> answeredRequestsIds = new ArrayList<>();
-
+        if(allDecisions == null){
+            return allRequests;
+        }
         for (Decision decision:allDecisions){
             answeredRequestsIds.add(decision.getSifraZahteva());
         }
