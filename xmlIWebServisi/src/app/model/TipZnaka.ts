@@ -1,0 +1,8 @@
+export  enum TTipZnaka {
+
+    VERBALNI_ZNAK,
+    GRAFICKI_ZNAK,
+    KOMBINOVANI_ZNAK,
+    TRODIMENZIONALNI_ZNAK,
+    DRUGA_VRSTA}
+    
