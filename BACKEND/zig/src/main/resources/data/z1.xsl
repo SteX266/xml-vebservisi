@@ -120,6 +120,8 @@
                                 <p style="font-size: 9pt; padding-top: 6pt; padding-left: 7pt;">
                                     <xsl:value-of select="zig:Prijava/zig:Podnosilac_prijave/zig:ime"/>&#160;
                                     <xsl:value-of select="zig:Prijava/zig:Podnosilac_prijave/zig:prezime"/>
+                                    <xsl:value-of select="zig:Prijava/zig:Podnosilac_prijave/zig:naziv"/>
+
                                 </p>
 
 
@@ -172,6 +174,8 @@
                                 <p style="font-size: 9pt; padding-top: 6pt; padding-left: 7pt;">
                                     <xsl:value-of select="zig:Prijava/zig:Punomocnik/zig:ime"/>&#160;
                                     <xsl:value-of select="zig:Prijava/zig:Punomocnik/zig:prezime"/>
+                                    <xsl:value-of select="zig:Prijava/zig:Punomocnik/zig:naziv"/>
+
                                 </p>
 
 
@@ -445,7 +449,7 @@
                                     састоји:</b>
                             </p>
                             <p class="basic_paragraph" style=" vertical-align: bottom;">
-                                <xsl:value-of select="zig:Prijava/zig:Informacije_o_zigu/zig:Boje_znaka/zig:Boja"/>
+                                <xsl:value-of select="zig:Prijava/zig:Informacije_o_zigu/zig:Boje_znaka"/>
                             </p>
                         </td>
                     </tr>
@@ -504,42 +508,16 @@
                     </tr>
 
 
-                    <tr>
-                        <xsl:variable name="klase" select="zig:Prijava/zig:Informacije_o_zigu/zig:Nicanska_klasifikacija"/>
-
-                        <xsl:for-each select="//*[position() &gt;= 1 and position() &lt;= 23]">
-                            <xsl:choose>
-                                <xsl:when test="position() = $klase">
-                                    <td style="background-color: red; padding-left: 2pt; text-align: left; font-size: 7pt;">
-                                        <xsl:value-of select="position()"/>
-                                    </td>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <td style="padding-left: 2pt; text-align: left; font-size: 7pt;">
-                                        <xsl:value-of select="position()"/>
-                                    </td>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:for-each>
-                    </tr>
 
                     <tr>
                         <xsl:variable name="klase" select="zig:Prijava/zig:Informacije_o_zigu/zig:Nicanska_klasifikacija"/>
-                        <xsl:for-each select="//*[position() &gt;= 24 and position() &lt;= 45]">
-                            <xsl:choose>
-                                <xsl:when test="position()+23 = $klase">
-                                    <td style="background-color: red; padding-left: 2pt; text-align: left; font-size: 7pt;">
-                                        <xsl:value-of select="position()+23"/>
-                                    </td>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <td style="padding-left: 2pt; text-align: left; font-size: 7pt;"><xsl:value-of select="position()+23"/></td>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:for-each>
+                        <td style="background-color: red; padding-left: 5pt; text-align: left; font-size: 9pt;">
+                            <xsl:value-of select="$klase"/>
+                        </td>
 
-                        <td/>
                     </tr>
+
+
 
                     <tr style="height: 40px">
                         <td class="relative_cells" style="display: table-cell; vertical-align: top; margin-top:0;" colspan="23" rowspan="2">

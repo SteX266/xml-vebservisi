@@ -238,17 +238,10 @@
                 / пословно име уписати великим словима)
               </p>
               <p style="font-size: 8.5pt;padding-top: 6pt;padding-left: 7pt;line-height: 10pt;">
-                <xsl:variable name="tlice" select="p:prijava/p:zahtev/p:podnosilac_prijave/@xsi:type"/>
-                <xsl:choose>
-                  <xsl:when test="contains($tlice,'TFizickoLice')">
                     <p style="font-size: 8.5pt;padding-top: 6pt;padding-left: 7pt;line-height: 10pt;">
                       <xsl:value-of select="p:prijava/p:zahtev/p:podnosilac_prijave/p:ime"/>&#160;
-                      <xsl:value-of select="p:prijava/p:zahtev/p:podnosilac_prijave/p:prezime"/></p>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="p:prijava/p:zahtev/p:podnosilac_prijave/p:naziv"/>
-                  </xsl:otherwise>
-                </xsl:choose>
+                      <xsl:value-of select="p:prijava/p:zahtev/p:podnosilac_prijave/p:prezime"/>
+                    <xsl:value-of select="p:prijava/p:zahtev/p:podnosilac_prijave/p:naziv"/></p>
               </p>
             </td>
             <td style="width: 185pt;padding-bottom:53px; " rowspan="3">
@@ -405,7 +398,7 @@
                 Број факса:
               </p>
               <p style="font-size: 8.5pt;padding-top: 5pt;padding-left: 5pt;">
-                <xsl:value-of select="p:prijava/p:zahtev/p:pronalazac/p:adresa/p:broj_faksa"/>
+                <xsl:value-of select="p:prijava/p:zahtev/p:pronalazac/p:kontakt/p:broj_faksa"/>
               </p>
             </td>
           </tr>
@@ -415,7 +408,7 @@
                 Е-пошта:
               </p>
               <p style="font-size: 8.5pt;padding-top: 5pt;padding-left: 5pt;">
-                <xsl:value-of select="p:prijava/p:zahtev/p:pronalazac/p:adresa/p:e_posta"/>
+                <xsl:value-of select="p:prijava/p:zahtev/p:pronalazac/p:kontakt/p:e_posta"/>
               </p>
             </td>
           </tr>
