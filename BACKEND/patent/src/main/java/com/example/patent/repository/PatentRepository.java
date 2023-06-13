@@ -6,6 +6,7 @@ import com.example.patent.util.AuthenticationUtilities;
 import com.example.patent.util.DatabaseUtilities;
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
+import org.w3c.dom.Node;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.*;
 import org.xmldb.api.modules.XMLResource;
@@ -99,6 +100,11 @@ public class PatentRepository {
 
     public List<Decision> getAllDecisions() {
         return DatabaseUtilities.getAllDecisions(collectionIdDecision);
+
+    }
+
+    public Node getNode(String id) {
+        return DatabaseUtilities.getResource(id,collectionId);
 
     }
 }

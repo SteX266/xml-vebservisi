@@ -3,6 +3,7 @@ package com.example.patent.util;
 import com.example.patent.model.Prijava;
 import com.example.patent.model.decision.Decision;
 import org.exist.xmldb.EXistResource;
+import org.w3c.dom.Node;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Database;
@@ -213,6 +214,38 @@ public class DatabaseUtilities {
             }
 
             return resenja;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if(res != null) {
+                try {
+                    ((EXistResource)res).freeResources();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
+
+            if(col != null) {
+                try {
+                    col.close();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static Node getResource(String documentId, String collectionId) {
+        Collection col = null;
+        XMLResource res = null;
+        try {
+            col = DatabaseManager.getCollection(conn.uri + collectionId, conn.user, conn.password);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            res = (XMLResource)col.getResource(documentId);
+            return res.getContentAsDOM();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -17,6 +17,7 @@ import org.xmldb.api.base.XMLDBException;
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,12 @@ public class PatentController {
         }
 
         return new ResponseEntity<>(trademarksDTOs, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "createDocuments/{id}")
+    public void createDocuments(@PathVariable String id) throws DocumentException, IOException {
+
+        patentService.createDocuments(id);
     }
 
     @PostMapping(value="report", consumes = MediaType.APPLICATION_XML_VALUE)

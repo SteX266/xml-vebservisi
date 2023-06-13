@@ -44,17 +44,17 @@
     <xs:complexType name="TZahtev">
         <xs:sequence>
             <xs:element name="naziv_pronalaska" type="TNazivPronalaska"/>
-            <xs:element name="podnosilac_prijave" type="TPodnosilacPrijave"> </xs:element>
-            <xs:element name="pronalazac" type="TPronalazac"> </xs:element>
-            <xs:element name="punomocnik" type="TPunomocnik"> </xs:element>
+            <xs:element name="podnosilac_prijave" type="TLice"> </xs:element>
+            <xs:element name="pronalazac" type="TLice"> </xs:element>
+            <xs:element name="punomocnik" type="TLice"> </xs:element>
             <xs:element name="adresa_za_dostavljanje" type="TAdresa"/>
             <xs:element name="nacin_dostavljanja">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="elektronsko" type="xs:boolean"/>
-                        <xs:element name="papirno" type="xs:boolean"/>
-                    </xs:sequence>
-                </xs:complexType>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="ELEKTRONSKO"/>
+                        <xs:enumeration value="PAPIRNO"/>
+                    </xs:restriction>
+                </xs:simpleType>
             </xs:element>
             <xs:element name="tip_prijave">
                 <xs:simpleType>
@@ -137,43 +137,5 @@
             <xs:element name="srpski_naziv" type="xs:string"/>
             <xs:element name="engleski_naziv" type="xs:string"/>
         </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="TPodnosilacPrijave">
-        <xs:complexContent>
-            <xs:extension base="TLice">
-                <xs:sequence>
-                    <xs:element name="pronalazac" type="xs:boolean"/>
-                    <xs:element name="navedeni" type="xs:boolean"/>
-                    <xs:element name="drzavljanstvo" type="xs:string"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="TPronalazac">
-        <xs:complexContent>
-            <xs:extension base="TFizickoLice">
-                <xs:sequence>
-                    <xs:element name="naveden" type="xs:boolean"/>
-                    <xs:element name="navedeni" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="TPunomocnik">
-        <xs:complexContent>
-            <xs:extension base="TLice">
-                <xs:sequence>
-                    <xs:element name="tip_punomocja">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="PUNOMOCNIK_ZA_ZASTUPANJE"/>
-                                <xs:enumeration value="PUNOMOCNIK_ZA_PRIJEM_PISMENA"/>
-                                <xs:enumeration value="ZAJEDNICKI_PREDSTAVNIK"/>
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
 </xs:schema>

@@ -9,12 +9,14 @@ import com.example.patent.model.*;
 import com.example.patent.model.decision.Decision;
 import com.example.patent.repository.PatentRepository;
 import com.example.patent.util.MarshallingUtils;
+import com.example.patent.util.PdfTransformer;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Node;
 import org.xmldb.api.base.XMLDBException;
 
 import javax.xml.bind.JAXBException;
@@ -24,6 +26,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -275,5 +278,12 @@ public class PatentService {
             e.printStackTrace();
         }
         return xmlDate;
+    }
+
+    public void createDocuments(String id) throws IOException, DocumentException {
+        Node zig = patentRepository.getNode(id + ".xml");
+        PdfTransformer pdfTransformer = new PdfTransformer();
+        pdfTransformer.generateHTML(zig, id);
+        pdfTransformer.generatePDF(id);
     }
 }
