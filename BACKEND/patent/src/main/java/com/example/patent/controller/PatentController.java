@@ -60,24 +60,16 @@ public class PatentController {
     }
 
     @GetMapping(value="getAllApproved", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<List<PatentRequestDTO>> getAllApproved(){
+    public ResponseEntity<List<Prijava>> getAllApproved(){
         List<Prijava> trademarks = patentService.getAllApproved();
-        List<PatentRequestDTO> trademarksDTOs= new ArrayList<>();
-        for (Prijava prijava:trademarks){
-            trademarksDTOs.add(new PatentRequestDTO(prijava));
-        }
-        return new ResponseEntity<>(trademarksDTOs, HttpStatus.OK);
+
+        return new ResponseEntity<>(trademarks, HttpStatus.OK);
     }
 
     @GetMapping(value="getAllUnanswered", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<List<PatentRequestDTO>> getAllUnanswered(){
+    public ResponseEntity<List<Prijava>> getAllUnanswered(){
         List<Prijava> trademarks = patentService.getAllUnanswered();
-        List<PatentRequestDTO> trademarksDTOs= new ArrayList<>();
-        for (Prijava prijava:trademarks){
-            trademarksDTOs.add(new PatentRequestDTO(prijava));
-        }
-
-        return new ResponseEntity<>(trademarksDTOs, HttpStatus.OK);
+        return new ResponseEntity<>(trademarks, HttpStatus.OK);
     }
 
     @PostMapping(value = "createDocuments/{id}")

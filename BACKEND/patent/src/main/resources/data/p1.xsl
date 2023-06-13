@@ -203,7 +203,7 @@
                 На српском језику: <span> <xsl:value-of select="p:prijava/p:zahtev/p:naziv_pronalaska/p:srpski_naziv"/> </span>
               </p>
               <p style="padding-top: 6pt;padding-left: 5pt;line-height: 139%;text-align: left;font-size: 8.5pt;">
-                На српском језику: <span> <xsl:value-of select="p:prijava/p:zahtev/p:naziv_pronalaska/p:srpski_naziv"/> </span>
+                На српском језику: <span> <xsl:value-of select="p:prijava/p:zahtev/p:naziv_pronalaska/p:engleski_naziv"/> </span>
               </p>
             </td>
           </tr>
