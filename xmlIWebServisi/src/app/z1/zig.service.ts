@@ -118,5 +118,12 @@ export class ZigService {
       responseType: 'text',
     });
   }
+
+  getOdobreni() {
+    return this._http.get(this.url + 'getAllApproved', {
+      headers: new HttpHeaders().set('Content-Type', 'application/xml'),
+      responseType: 'text',
+    });
+  }
 }
 

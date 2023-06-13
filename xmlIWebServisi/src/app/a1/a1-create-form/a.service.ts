@@ -113,7 +113,15 @@ export class AService {
   }
 
   getZahtevi() {
-    return this._http.get(this.url + 'getAll', {
+    return this._http.get(this.url + 'getAllUnanswered', {
+      headers: new HttpHeaders().set('Content-Type', 'application/xml'),
+      responseType: 'text',
+    });
+  }
+
+
+  getOdobreni() {
+    return this._http.get(this.url + 'getAllApproved', {
       headers: new HttpHeaders().set('Content-Type', 'application/xml'),
       responseType: 'text',
     });
