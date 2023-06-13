@@ -91,16 +91,18 @@ public class PatentService {
         TAdresa adresa = new TAdresa(zajednickiPredstavnik.getAdresa());
         TKontaktInformacije kontaktInformacije = new TKontaktInformacije(zajednickiPredstavnik.getKontakt());
         if (zajednickiPredstavnik.getNaziv().equals("")){
-            TPravnoLice lice = new TPravnoLice();
-            lice.setNaziv(zajednickiPredstavnik.getNaziv());
-            lice.setAdresa(adresa);
-            lice.setKontakt(kontaktInformacije);
-            return lice;
-        }
-        else{
+
             TFizickoLice lice = new TFizickoLice();
             lice.setIme(zajednickiPredstavnik.getIme());
             lice.setPrezime(zajednickiPredstavnik.getPrezime());
+            lice.setAdresa(adresa);
+            lice.setKontakt(kontaktInformacije);
+            return lice;
+
+        }
+        else{
+            TPravnoLice lice = new TPravnoLice();
+            lice.setNaziv(zajednickiPredstavnik.getNaziv());
             lice.setAdresa(adresa);
             lice.setKontakt(kontaktInformacije);
             return lice;
