@@ -4,6 +4,7 @@ import com.example.zig.model.decision.Decision;
 import com.example.zig.model.Prijava;
 import com.example.zig.util.AuthenticationUtilities;
 import com.example.zig.util.DatabaseUtilities;
+import com.example.zig.util.MarshallingUtils;
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
 import org.w3c.dom.Node;
@@ -104,5 +105,17 @@ public class ZigRepository {
 
     public Node getNode(String id) {
         return DatabaseUtilities.getResource(id,collectionId);
+    }
+
+    public List<Prijava> search(String data) throws Exception {
+        List<XMLResource> resources = getResources(data);
+        List<Prijava> zahtevi = new ArrayList<>();
+
+        for(XMLResource r: resources){
+
+            zahtevi.add(new MarshallingUtils().unmarshallFromNode(r.getContentAsDOM()));
+        }
+
+        return zahtevi;
     }
 }

@@ -291,4 +291,9 @@ public class TrademarkService {
         }
         return xmlDate;
     }
+
+    public List<Prijava> search(String data) throws Exception {
+        return zigRepository.search(data);
+
+    }
 }

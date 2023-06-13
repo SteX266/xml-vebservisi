@@ -115,4 +115,11 @@ public class TrademarkController {
     public void generateReport(@RequestBody ReportDTO reportDTO) throws JAXBException, XMLDBException, DocumentException, FileNotFoundException {
         trademarkService.generateReport(reportDTO);
     }
+
+
+    @GetMapping(value = "/search/{data}", produces = MediaType.APPLICATION_XML_VALUE)
+    public ResponseEntity<List<Prijava>> search(@PathVariable String data) throws Exception {
+        List<Prijava> zahtevi = trademarkService.search(data);
+        return new ResponseEntity<>(zahtevi, HttpStatus.OK);
+    }
 }
