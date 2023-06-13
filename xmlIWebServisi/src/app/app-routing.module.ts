@@ -19,7 +19,7 @@ const routes: Routes = [
     children: [{ path: 'login', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },
     ]},
-  { path: 'clinet', component: ClinetNavbarComponent,
+  { path: 'korisnik', component: ClinetNavbarComponent,
     children:[ { path: 'z1', component: Z1CreateFormComponent },
     { path: 'p1', component: P1CreateFormComponent },
     { path: 'a1', component: A1CreateFormComponent },

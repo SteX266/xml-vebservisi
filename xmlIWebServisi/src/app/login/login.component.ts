@@ -34,7 +34,7 @@ export class LoginComponent {
           if (value) {
             this.service.saveCurrentUserEmail(value.email);
             this.service.saveCurrentUserRole(value.userRole);
-            this.Redirect(value.userRole);
+            this.Redirect(value.role);
           } 
           else {
             this.wrong = true;
