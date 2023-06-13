@@ -26,6 +26,7 @@ public class UserService {
 
         for (User user : users) {
             if (user.getEmail().equals(loginDTO.email) && user.getPassword().equals(loginDTO.password)) {
+                System.out.println("ULOGOVAN KORISNIK!");
                 return user;
             }
         }
@@ -37,6 +38,8 @@ public class UserService {
     public void register(RegisterDTO registerDTO){
         User user = new User(registerDTO.name, registerDTO.surname, registerDTO.email, registerDTO.password, "KORISNIK");
         this.users.add(user);
+        System.out.println("REGISTROVAN NOVI KORISNIK!");
+        System.out.println(user.getEmail());
     }
 
 }
