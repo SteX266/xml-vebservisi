@@ -60,30 +60,20 @@ public class CopyrightController {
     }
 
     @GetMapping(value="getAllApproved", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<List<CopyrightRequestDTO>> getAllApproved(){
+    public ResponseEntity<List<Autorska>> getAllApproved(){
         List<Autorska> trademarks = copyrightService.getAllApproved();
-        List<CopyrightRequestDTO> trademarksDTOs= new ArrayList<>();
-        for (Autorska prijava:trademarks){
-            trademarksDTOs.add(new CopyrightRequestDTO(prijava));
-        }
-        return new ResponseEntity<>(trademarksDTOs, HttpStatus.OK);
+        return new ResponseEntity<>(trademarks, HttpStatus.OK);
     }
 
     @GetMapping(value="getAllUnanswered", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<List<CopyrightRequestDTO>> getAllUnanswered(){
+    public ResponseEntity<List<Autorska>> getAllUnanswered(){
         List<Autorska> trademarks = copyrightService.getAllUnanswered();
-        List<CopyrightRequestDTO> trademarksDTOs= new ArrayList<>();
-        for (Autorska prijava:trademarks){
-            trademarksDTOs.add(new CopyrightRequestDTO(prijava));
-        }
-
-        return new ResponseEntity<>(trademarksDTOs, HttpStatus.OK);
+        return new ResponseEntity<>(trademarks, HttpStatus.OK);
     }
 
 
     @PostMapping(value = "createDocuments/{id}")
     public void createDocuments(@PathVariable String id) throws DocumentException, IOException {
-
         copyrightService.createDocuments(id);
     }
 

@@ -24,8 +24,6 @@ public class AuthController {
     @PostMapping(value="login", consumes = "application/xml")
     public ResponseEntity<User> login(@RequestBody LoginDTO loginDTO){
         User user = userService.login(loginDTO);
-
-
         if (user != null) {
             return new ResponseEntity<>(user, HttpStatus.OK);
         }
