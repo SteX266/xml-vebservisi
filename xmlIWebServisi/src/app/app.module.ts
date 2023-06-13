@@ -19,6 +19,12 @@ import { DetailZ1Component } from 'src/admin/detail-z1/detail-z1.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { P1CreateFormComponent } from './p1/p1-create-form/p1-create-form.component';
+import { ClinetNavbarComponent } from './navbars/clinet-navbar/clinet-navbar.component';
+import { AminNavbarComponent } from './navbars/amin-navbar/amin-navbar.component';
+import { GuestNavbarComponent } from './navbars/guest-navbar/guest-navbar.component';
+import { GuestPageComponent } from './guest/guest-page/guest-page.component';
+import { ClinetPageComponent } from './clinet/clinet-page/clinet-page.component';
+import { AdminPageComponent } from 'src/admin/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { P1CreateFormComponent } from './p1/p1-create-form/p1-create-form.compon
     DetailZ1Component,
     LoginComponent,
     RegistrationComponent,
-    P1CreateFormComponent
+    P1CreateFormComponent,
+    ClinetNavbarComponent,
+    AminNavbarComponent,
+    GuestNavbarComponent,
+    GuestPageComponent,
+    ClinetPageComponent,
+    AdminPageComponent,
   
 
   ],
