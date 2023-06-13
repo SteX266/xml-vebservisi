@@ -10,6 +10,28 @@ export class LoginRegisterService {
   constructor(private _http: HttpClient) {}
   url = 'http://localhost:9003/auth/';
 
+  public saveCurrentUserRole(role: string) {
+    localStorage.setItem('currentUserRole', role);
+  }
+
+  public saveCurrentUserEmail(email: string) {
+    localStorage.setItem('currentUserEmail', email);
+  }
+
+  public saveCurrentUserId(id: string) {
+    localStorage.setItem('currentUserId', id);
+  }
+  public getCurrentUserRole(): string {
+    return localStorage.getItem('currentUserRole') || '';
+  }
+  public getCurrentUserEmail(): string {
+    return localStorage.getItem('currentUserEmail') || '';
+  }
+
+  logout() {
+    window.location.href = '/guest';
+  }
+
   login(prijava: LoginDTO) {
     const xml = JsonToXML.parse('login', prijava);
     const url = this.url + 'login';
@@ -21,6 +43,8 @@ export class LoginRegisterService {
       }),
     });
   }
+
+  
   register(registration: RegisterDTO) {
     const xml = JsonToXML.parse('register', registration);
     const url = this.url + 'register';
