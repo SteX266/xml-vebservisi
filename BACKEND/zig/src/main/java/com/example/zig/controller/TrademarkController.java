@@ -86,11 +86,8 @@ public class TrademarkController {
     @GetMapping("/downloadPDF/{fileName}")
     public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response, @PathVariable("fileName") String fileName) throws IOException {
         String path = "gen/" + fileName + ".pdf";
-        System.out.println("USAOOO");
-        System.out.println(path);
         File file = new File(path);
         if (file.exists()) {
-            System.out.println("File found");
             String mimeType = "application/pdf";
             response.setContentType(mimeType);
             response.setHeader("Content-Disposition", "inline; filename=\"" + file.getName() + "\"");

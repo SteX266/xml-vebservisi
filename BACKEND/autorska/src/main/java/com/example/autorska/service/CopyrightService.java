@@ -224,26 +224,30 @@ public class CopyrightService {
         int numberOfRequests = 0;
         int numberOfApproved = 0;
         int numberOfRejected = 0;
-        for (Autorska request:allRequests){
-            if(startDate.compare(request.getDetaljiPrijave().getDatumPodnosenja()) == DatatypeConstants.LESSER){
-                if(endDate.compare(request.getDetaljiPrijave().getDatumPodnosenja()) == DatatypeConstants.GREATER){
-                    numberOfRequests++;
+        if (allRequests != null){
+            for (Autorska request : allRequests) {
+                if (startDate.compare(request.getDetaljiPrijave().getDatumPodnosenja()) == DatatypeConstants.LESSER) {
+                    if (endDate.compare(request.getDetaljiPrijave().getDatumPodnosenja()) == DatatypeConstants.GREATER) {
+                        numberOfRequests++;
+                    }
+                }
+            }
+        }
+        if (allDecisions != null){
+            for (Decision decision:allDecisions){
+                if(startDate.compare(decision.getDatumRazresenja()) == DatatypeConstants.LESSER){
+                    if(endDate.compare(decision.getDatumRazresenja()) == DatatypeConstants.GREATER){
+                        if(decision.isOdobren()){
+                            numberOfApproved++;
+                        }
+                        else{
+                            numberOfRejected++;
+                        }
+                    }
                 }
             }
         }
 
-        for (Decision decision:allDecisions){
-            if(startDate.compare(decision.getDatumRazresenja()) == DatatypeConstants.LESSER){
-                if(endDate.compare(decision.getDatumRazresenja()) == DatatypeConstants.GREATER){
-                    if(decision.isOdobren()){
-                        numberOfApproved++;
-                    }
-                    else{
-                        numberOfRejected++;
-                    }
-                }
-            }
-        }
 
 
         Document document = new Document();
