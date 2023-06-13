@@ -14,6 +14,9 @@ import { GuestNavbarComponent } from './navbars/guest-navbar/guest-navbar.compon
 import { ClinetNavbarComponent } from './navbars/clinet-navbar/clinet-navbar.component';
 import { AminNavbarComponent } from './navbars/amin-navbar/amin-navbar.component';
 import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-all-p1-requests/view-all-p1-requests.component';
+import { ViewZ1Component } from './clinet/clinet-page/view-z1/view-z1.component';
+import { ViewP1Component } from './clinet/clinet-page/view-p1/view-p1.component';
+import { ViewA1Component } from './clinet/clinet-page/view-a1/view-a1.component';
 
 const routes: Routes = [
   { path: 'guest', component: GuestNavbarComponent,
@@ -24,6 +27,9 @@ const routes: Routes = [
     children:[ { path: 'z1', component: Z1CreateFormComponent },
     { path: 'p1', component: P1CreateFormComponent },
     { path: 'a1', component: A1CreateFormComponent },
+    { path: 'viewZ1', component: ViewZ1Component },
+    { path: 'viewP1', component: ViewP1Component },
+    { path: 'viewA1', component: ViewA1Component },
     ]},
   { path: 'admin', component: AminNavbarComponent,children:[
     { path: 'viewA1', component: ViewAllA1RequestsComponent },

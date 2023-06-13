@@ -26,6 +26,9 @@ import { GuestPageComponent } from './guest/guest-page/guest-page.component';
 import { ClinetPageComponent } from './clinet/clinet-page/clinet-page.component';
 import { AdminPageComponent } from 'src/admin/admin-page/admin-page.component';
 import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-all-p1-requests/view-all-p1-requests.component';
+import { ViewA1Component } from './clinet/clinet-page/view-a1/view-a1.component';
+import { ViewP1Component } from './clinet/clinet-page/view-p1/view-p1.component';
+import { ViewZ1Component } from './clinet/clinet-page/view-z1/view-z1.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-
     ClinetPageComponent,
     AdminPageComponent,
     ViewAllP1RequestsComponent,
+    ViewA1Component,
+    ViewP1Component,
+    ViewZ1Component,
   
 
   ],

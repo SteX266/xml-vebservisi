@@ -75,7 +75,7 @@ export class P1Service {
   }
 
   getZahtevi() {
-    return this._http.get(this.url + 'getAll', {
+    return this._http.get(this.url + 'getAllUnanswered', {
       headers: new HttpHeaders().set('Content-Type', 'application/xml'),
       responseType: 'text',
     });
@@ -116,6 +116,13 @@ export class P1Service {
         'Access-Control-Allow-Origin': '*',
         responseType: 'text',
       }),
+    });
+  }
+
+  getOdobreni() {
+    return this._http.get(this.url + 'getAllApproved', {
+      headers: new HttpHeaders().set('Content-Type', 'application/xml'),
+      responseType: 'text',
     });
   }
 }
