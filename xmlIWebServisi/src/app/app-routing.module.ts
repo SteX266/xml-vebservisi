@@ -13,6 +13,7 @@ import { ClinetPageComponent } from './clinet/clinet-page/clinet-page.component'
 import { GuestNavbarComponent } from './navbars/guest-navbar/guest-navbar.component';
 import { ClinetNavbarComponent } from './navbars/clinet-navbar/clinet-navbar.component';
 import { AminNavbarComponent } from './navbars/amin-navbar/amin-navbar.component';
+import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-all-p1-requests/view-all-p1-requests.component';
 
 const routes: Routes = [
   { path: 'guest', component: GuestNavbarComponent,
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'admin', component: AminNavbarComponent,children:[
     { path: 'viewA1', component: ViewAllA1RequestsComponent },
     { path: 'viewZ1', component: ViewAllZ1RequestsComponent },
+    { path: 'viewP1', component: ViewAllP1RequestsComponent },
     ]},
   { path: '', component: GuestPageComponent },
 ];

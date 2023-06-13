@@ -25,6 +25,7 @@ import { GuestNavbarComponent } from './navbars/guest-navbar/guest-navbar.compon
 import { GuestPageComponent } from './guest/guest-page/guest-page.component';
 import { ClinetPageComponent } from './clinet/clinet-page/clinet-page.component';
 import { AdminPageComponent } from 'src/admin/admin-page/admin-page.component';
+import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-all-p1-requests/view-all-p1-requests.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AdminPageComponent } from 'src/admin/admin-page/admin-page.component';
     GuestPageComponent,
     ClinetPageComponent,
     AdminPageComponent,
+    ViewAllP1RequestsComponent,
   
 
   ],
