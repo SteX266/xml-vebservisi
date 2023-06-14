@@ -7,6 +7,7 @@ import { AService } from './a.service';
 import { PodaciOAutorimaDTO } from 'src/app/model/a1/PodaciOAutorimaDTO';
 import { AutoriDTO } from 'src/app/model/a1/AutoriDTO';
 import { AutorDTO } from 'src/app/model/a1/AutorDTO';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-z1-create-form',
@@ -14,7 +15,7 @@ import { AutorDTO } from 'src/app/model/a1/AutorDTO';
   styleUrls: ['./a1-create-form.component.css']
 })
 export class A1CreateFormComponent {
-  constructor(private service : AService) {}
+  constructor(private service : AService,private router: Router) {}
 
   prijava: CopyrightRequestDTO = new CopyrightRequestDTO();
   podnosilacLice: string = 'Fizicko lice';
@@ -33,8 +34,9 @@ export class A1CreateFormComponent {
     this.prijava.podaciOAutorima.autori.autor.push(new AutorDTO("pusa","pusic"));
 
     this.service.sendRequest(this.prijava).subscribe();
-
-  }
+    this.router.navigate(['/korisnik']); // Replace '/new-route' with the actual path of the route you want to navigate to
+    }
+  
   dodajKoautora() {
     this.prijava.podaciOAutorima.autori.autor.push(
       new AutorDTO()

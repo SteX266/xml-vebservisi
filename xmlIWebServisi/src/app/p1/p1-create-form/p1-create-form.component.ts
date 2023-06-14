@@ -3,6 +3,7 @@ import { PatentRequestDTO } from 'src/app/model/p1/PatentRequestDTO';
 import { TDetaljiPrijaveOznakaDTO } from 'src/app/model/p1/TDetaljiPrijaveOznakaDTO';
 import { TLiceDTO } from 'src/app/model/p1/TLiceDTO';
 import { P1Service } from '../p1.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-p1-create-form',
@@ -16,7 +17,7 @@ export class P1CreateFormComponent {
   punomocnikZaPrijem: boolean = false;
   zajednickiPredstavnik: boolean = false;
 
-  constructor(private service: P1Service) {
+  constructor(private service: P1Service,private router: Router) {
     this.patentRequest.prethodnePrijave.detaljiPrijaveOznaka.push(
       new TDetaljiPrijaveOznakaDTO()
     );
@@ -40,5 +41,7 @@ export class P1CreateFormComponent {
 
   submitRequest() {
    this.service.sendRequest(this.patentRequest).subscribe();
+   this.router.navigate(['/korisnik']); // Replace '/new-route' with the actual path of the route you want to navigate to
+
   }
 }

@@ -38,10 +38,12 @@ export class ViewAllP1RequestsComponent {
 
   public Accept(id: string) {
     this.service.AcceptRequest(id, '').subscribe();
+    this.tableData = this.tableData.filter(item => item.potpis !== id);
   }
 
   public Decline(id: string) {
     this.service.DeclineRequest(id, '').subscribe();
+    this.tableData = this.tableData.filter(item => item.potpis !== id);
   }
 
   public Print(id: string) {
