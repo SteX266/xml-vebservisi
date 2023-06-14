@@ -30,7 +30,7 @@ import com.example.patent.dto.TDetaljiPrijaveOznakaDTO;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TDetaljiPrijave", propOrder = {
+@XmlType(name = "TDetaljiPrijave",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "brojPrijave",
     "datumPodnosenja"
 })
@@ -40,10 +40,10 @@ import com.example.patent.dto.TDetaljiPrijaveOznakaDTO;
 })
 public class TDetaljiPrijave {
 
-    @XmlElement(name = "broj_prijave", required = true)
+    @XmlElement(name = "broj_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     @XmlSchemaType(name = "positiveInteger")
     protected String brojPrijave;
-    @XmlElement(name = "datum_podnosenja", required = true)
+    @XmlElement(name = "datum_podnosenja", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar datumPodnosenja;
 

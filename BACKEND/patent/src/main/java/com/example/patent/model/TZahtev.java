@@ -71,7 +71,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TZahtev", propOrder = {
+@XmlType(name = "TZahtev",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "nazivPronalaska",
     "podnosilacPrijave",
     "pronalazac",
@@ -85,25 +85,25 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TZahtev {
 
-    @XmlElement(name = "naziv_pronalaska", required = true)
+    @XmlElement(name = "naziv_pronalaska", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TNazivPronalaska nazivPronalaska;
-    @XmlElement(name = "podnosilac_prijave", required = true)
+    @XmlElement(name = "podnosilac_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TLice podnosilacPrijave;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TLice pronalazac;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TLice punomocnik;
-    @XmlElement(name = "adresa_za_dostavljanje", required = true)
+    @XmlElement(name = "adresa_za_dostavljanje", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TAdresa adresaZaDostavljanje;
-    @XmlElement(name = "nacin_dostavljanja", required = true)
+    @XmlElement(name = "nacin_dostavljanja", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected NacinDostavljanja nacinDostavljanja;
-    @XmlElement(name = "tip_prijave", required = true)
+    @XmlElement(name = "tip_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String tipPrijave;
-    @XmlElement(name = "prvobitna_prijava", required = true)
+    @XmlElement(name = "prvobitna_prijava", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TDetaljiPrijave prvobitnaPrijava;
-    @XmlElement(name = "prethodne_prijave", required = true)
+    @XmlElement(name = "prethodne_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected PrethodnePrijave prethodnePrijave;
-    @XmlElement(name = "dodatni_podaci")
+    @XmlElement(name = "dodatni_podaci",namespace = "http://www.ftn.uns.ac.rs/patent")
     protected boolean dodatniPodaci;
 
 
@@ -370,7 +370,9 @@ public class TZahtev {
     })
     public static class NacinDostavljanja {
 
+        @XmlElement(namespace = "http://www.ftn.uns.ac.rs/patent")
         protected boolean elektronsko;
+        @XmlElement(namespace = "http://www.ftn.uns.ac.rs/patent")
         protected boolean papirno;
 
         public NacinDostavljanja(NacinDostavljanjaDTO nacinDostavljanja) {
@@ -440,7 +442,7 @@ public class TZahtev {
     })
     public static class PrethodnePrijave {
 
-        @XmlElement(name = "prethodna_prijava", required = true)
+        @XmlElement(name = "prethodna_prijava", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
         protected List<TDetaljiPrijaveOznaka> prethodnaPrijava;
 
         public PrethodnePrijave(PrethodnePrijaveDTO prethodnePrijave) {

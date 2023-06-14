@@ -36,14 +36,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TDetaljiPrijaveOznaka", propOrder = {
+@XmlType(name = "TDetaljiPrijaveOznaka",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "dvoslovnaOznaka"
 })
 public class TDetaljiPrijaveOznaka
     extends TDetaljiPrijave
 {
 
-    @XmlElement(name = "dvoslovna_oznaka", required = true)
+    @XmlElement(name = "dvoslovna_oznaka", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String dvoslovnaOznaka;
 
     public TDetaljiPrijaveOznaka(TDetaljiPrijaveOznakaDTO tDetaljiPrijaveOznakaDTO) {

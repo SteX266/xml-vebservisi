@@ -48,7 +48,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TAdresa", propOrder = {
+@XmlType(name = "TAdresa",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "ulica",
     "broj",
     "postanskiBroj",
@@ -57,15 +57,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TAdresa {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String ulica;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String broj;
-    @XmlElement(name = "postanski_broj")
+    @XmlElement(name = "postanski_broj",namespace = "http://www.ftn.uns.ac.rs/patent")
     protected int postanskiBroj;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String mesto;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String drzava;
 
     public TAdresa(AdresaDTO adresa) {

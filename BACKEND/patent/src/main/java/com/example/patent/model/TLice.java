@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.*;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TLice", propOrder = {
+@XmlType(name = "TLice",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "adresa",
     "kontakt"
 })
@@ -35,9 +35,9 @@ import javax.xml.bind.annotation.*;
 })
 public abstract class TLice {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TAdresa adresa;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TKontaktInformacije kontakt;
 
     /**

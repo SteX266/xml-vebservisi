@@ -32,9 +32,9 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name = "prijava",namespace = "http://www.ftn.uns.ac.rs/patent")
 public class Prijava {
 
-    @XmlElement(name = "detalji_prijave", required = true)
+    @XmlElement(name = "detalji_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TDetaljiPrijavePatent detaljiPrijave;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected TZahtev zahtev;
 
     /**

@@ -31,18 +31,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TKontaktInformacije", propOrder = {
+@XmlType(name = "TKontaktInformacije",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "brojTelefona",
     "brojFaksa",
     "ePosta"
 })
 public class TKontaktInformacije {
 
-    @XmlElement(name = "broj_telefona", required = true)
+    @XmlElement(name = "broj_telefona", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String brojTelefona;
-    @XmlElement(name = "broj_faksa", required = true)
+    @XmlElement(name = "broj_faksa", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String brojFaksa;
-    @XmlElement(name = "e_posta", required = true)
+    @XmlElement(name = "e_posta", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String ePosta;
 
     public TKontaktInformacije(KontaktInformacijeDTO kontakt) {

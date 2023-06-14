@@ -30,15 +30,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TNazivPronalaska", propOrder = {
+@XmlType(name = "TNazivPronalaska",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "srpskiNaziv",
     "engleskiNaziv"
 })
 public class TNazivPronalaska {
 
-    @XmlElement(name = "srpski_naziv", required = true)
+    @XmlElement(name = "srpski_naziv", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String srpskiNaziv;
-    @XmlElement(name = "engleski_naziv", required = true)
+    @XmlElement(name = "engleski_naziv", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String engleskiNaziv;
 
     public TNazivPronalaska(TNazivPronalaskaDTO nazivPronalaska) {

@@ -139,28 +139,28 @@ import java.util.List;
 @XmlRootElement(name = "autorksa",namespace = "http://www.ftn.uns.ac.rs/autorksa")
 public class Autorska {
 
-    @XmlElement(name = "podnosilac_prijave", required = true)
+    @XmlElement(name = "podnosilac_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected TLice podnosilacPrijave;
-    @XmlElement(name="pseudonim")
+    @XmlElement(name="pseudonim",namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String pseudonim;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected TLice punomocnik;
-    @XmlElement(name = "podaci_o_naslovu", required = true)
+    @XmlElement(name = "podaci_o_naslovu", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected PodaciONaslovu podaciONaslovu;
-    @XmlElement(name = "podaci_o_preradi", required = true)
+    @XmlElement(name = "podaci_o_preradi", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected PodaciOPreradi podaciOPreradi;
-    @XmlElement(name = "vrsta_dela", required = true)
+    @XmlElement(name = "vrsta_dela", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String vrstaDela;
-    @XmlElement(name = "podaci_o_autorima", required = true)
+    @XmlElement(name = "podaci_o_autorima", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected PodaciOAutorima podaciOAutorima;
-    @XmlElement(name = "radnom_odnosu")
+    @XmlElement(name = "radnom_odnosu",namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected boolean radnomOdnosu;
-    @XmlElement(name = "namena_dela", required = true)
+    @XmlElement(name = "namena_dela", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String namenaDela;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String potpis;
 
-    @XmlElement(name = "detalji_prijave", required = true)
+    @XmlElement(name = "detalji_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected TDetaljiPrijave detaljiPrijave;
 
     /**
@@ -476,7 +476,9 @@ public class Autorska {
     })
     public static class PodaciOAutorima {
 
+        @XmlElement(namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected Autori autori;
+        @XmlElement(namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected boolean anonimno;
 
         public PodaciOAutorima(PodaciOAutorimaDTO podaciOAutorima) {
@@ -788,9 +790,9 @@ public class Autorska {
     })
     public static class PodaciONaslovu {
 
-        @XmlElement(required = true)
+        @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected String naslov;
-        @XmlElement(name = "alternativni_naslov", required = true)
+        @XmlElement(name = "alternativni_naslov", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected String alternativniNaslov;
 
         public PodaciONaslovu(PodaciONaslovuDTO podaciONaslovu) {
@@ -889,9 +891,9 @@ public class Autorska {
     })
     public static class PodaciOPreradi {
 
-        @XmlElement(required = true)
+        @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected String naslov;
-        @XmlElement(required = true)
+        @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         protected PodaciOAutorima.Autori.Autor autor;
 
         public PodaciOPreradi(PodaciOPreradiDTO podaciOPreradi) {
@@ -963,10 +965,10 @@ public class Autorska {
 
     public static class TDetaljiPrijave {
 
-        @XmlElement(name = "broj_prijave", required = true)
+        @XmlElement(name = "broj_prijave", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         @XmlSchemaType(name = "positiveInteger")
         protected String brojPrijave;
-        @XmlElement(name = "datum_podnosenja", required = true)
+        @XmlElement(name = "datum_podnosenja", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
         @XmlSchemaType(name = "date")
         protected XMLGregorianCalendar datumPodnosenja;
 

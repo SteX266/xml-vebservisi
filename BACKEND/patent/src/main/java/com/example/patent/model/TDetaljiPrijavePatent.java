@@ -26,7 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TDetaljiPrijavePatent", propOrder = {
+@XmlType(name = "TDetaljiPrijavePatent",namespace = "http://www.ftn.uns.ac.rs/patent", propOrder = {
     "priznatiDatumPodnosenja",
     "potpis"
 })
@@ -34,10 +34,10 @@ public class TDetaljiPrijavePatent
     extends TDetaljiPrijave
 {
 
-    @XmlElement(name = "priznati_datum_podnosenja", required = true)
+    @XmlElement(name = "priznati_datum_podnosenja", required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar priznatiDatumPodnosenja;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String potpis;
 
     /**

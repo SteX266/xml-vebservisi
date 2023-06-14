@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TFizickoLice", propOrder = {
+@XmlType(name = "TFizickoLice",namespace = "http://www.ftn.uns.ac.rs/autorksa", propOrder = {
     "ime",
     "prezime"
 })
@@ -36,9 +36,9 @@ public class TFizickoLice
     extends TLice
 {
 
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String ime;
-    @XmlElement(required = true)
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
     protected String prezime;
 
     /**
