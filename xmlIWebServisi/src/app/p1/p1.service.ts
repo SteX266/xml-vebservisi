@@ -125,4 +125,12 @@ export class P1Service {
       responseType: 'text',
     });
   }
+
+  search(q:string){
+    return this._http.get(this.url + 'search/'+q, {
+      headers: new HttpHeaders().set('Content-Type', 'application/xml'),
+      responseType: 'text',
+    });
+
+}
 }

@@ -29,6 +29,7 @@ import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-
 import { ViewA1Component } from './clinet/clinet-page/view-a1/view-a1.component';
 import { ViewP1Component } from './clinet/clinet-page/view-p1/view-p1.component';
 import { ViewZ1Component } from './clinet/clinet-page/view-z1/view-z1.component';
+import { ReportComponent } from 'src/admin/report/report.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ViewZ1Component } from './clinet/clinet-page/view-z1/view-z1.component'
     ViewA1Component,
     ViewP1Component,
     ViewZ1Component,
+    ReportComponent,
   
 
   ],
