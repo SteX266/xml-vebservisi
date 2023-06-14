@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Prijava} from '../../model/Prijava';
 import { ZigService } from '../zig.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-z1-create-form',
@@ -8,7 +9,7 @@ import { ZigService } from '../zig.service';
   styleUrls: ['./z1-create-form.component.css']
 })
 export class Z1CreateFormComponent {
-  constructor(private service : ZigService) {}
+  constructor(private service : ZigService,private router: Router) {}
 
   prijava: Prijava = new Prijava();
   podnosilacLice: string = 'Fizicko lice';
@@ -27,6 +28,8 @@ export class Z1CreateFormComponent {
     }
 
     this.service.sendRequest(this.prijava).subscribe();
+    this.router.navigate(['/korisnik']); // Replace '/new-route' with the actual path of the route you want to navigate to
+
 
   }
 
