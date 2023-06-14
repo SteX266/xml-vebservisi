@@ -41,6 +41,12 @@ export class ViewZ1Component {
   
   public search(){
 
+    this.service.search(this.searchQuery).subscribe({
+      next: async (xml) => {
+        this.tableData = this.service.parseString(xml);
+      },
+    });
+
   }
 
 }
