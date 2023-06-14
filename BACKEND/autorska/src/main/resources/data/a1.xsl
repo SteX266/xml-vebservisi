@@ -128,19 +128,13 @@
                                 права ако је подносилац правно лице*:
                             </p>
                             <p style="padding-left: 5pt;padding-bottom: 10pt;line-height: 139%;text-align: left;font-size:11pt;">
-                                <xsl:variable name="tlice" select="a:autorksa/a:podnosilac_prijave/a:ime"/>
-                                <xsl:choose>
-                                    <xsl:when test="contains($tlice,'TFizickoLice')">
                                         <p style="font-size: 11pt;padding-top: 6pt;padding-bottom: 6pt;padding-left: 7pt;line-height: 10pt;">
                                             Име и презиме: &#160;
                                             <xsl:value-of select="a:autorksa/a:podnosilac_prijave/a:ime"/>&#160; <xsl:value-of select="a:autorksa/a:podnosilac_prijave/a:prezime"/>, &#160;
+                                            Пословно име: <xsl:value-of select="a:autorksa/a:podnosilac_prijave/a:ime"/>
+
                                             Држављанство: <xsl:value-of select="a:autorksa/a:podnosilac_prijave/a:drzava"/>
                                         </p>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        Пословно име: <xsl:value-of select="a:autorksa/a:podnosilac_prijave/a:ime"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
                                 <br/>
                                 <p style="font-size: 11pt; padding-left: 5pt;text-align: left;" >
                                     Улица и број, поштански број, место и држава:
@@ -384,10 +378,11 @@
                             <p style="margin-left: 25pt;margin-top:20pt;padding-top:10pt;line-height: 139%;text-align: left;font-size:15pt;">
                                 Број пријаве:
                             </p>
-                            <p style="margin-left: 25pt;margin-top:20pt;line-height: 139%;text-align: left;font-size:20pt;">
-                                <b>A-</b>
+                            <p style="font-size: 16pt;padding-top: 10pt;text-align: left; margin-left:7pt">
+                                A<span> <xsl:value-of select="a:autorksa/a:detalji_prijave/a:broj_prijave"/> </span>
                             </p>
                         </td>
+
                     </tr>
                     <tr style="height: 40pt">
                         <td  style="width: 100%;border-left-style: solid;
@@ -399,8 +394,9 @@
                             <p style="margin-left: 25pt;margin-top:20pt;line-height: 139%;text-align: left;font-size:15pt;">
                                 Датум подношења:
                             </p>
-                            <p style="margin-left: 5pt;padding-top:10pt;padding-bottom:10pt;line-height: 139%;text-align: left;font-size:15pt;height:25pt">
 
+                            <p style="font-size: 8.5pt;padding-top: 2pt;padding-left: 7pt">
+                                <xsl:value-of select="a:autorksa/a:detalji_prijave/a:datum_podnosenja"/>
                             </p>
                         </td>
                     </tr>
