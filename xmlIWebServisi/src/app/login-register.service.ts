@@ -56,4 +56,34 @@ export class LoginRegisterService {
       }),
     });
   }
+
+
+  report(type:String,startDate:String, endDate:String){
+    const xml = JsonToXML.parse('report', {startDate:startDate,endDate:endDate});
+    var url;
+    if(type==="zig"){
+      url = "http://localhost:9000/trademark/report";
+    }
+    else if(type == "autorska"){
+      url = "http://localhost:9001/copyright/report";
+
+    }
+    else{
+      url = "http://localhost:9002/patent/report";
+
+    }
+    
+    
+    return this._http.post<any>(url, xml, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/xml',
+        'Access-Control-Allow-Origin': '*',
+        responseType: 'text',
+      }),
+    });
+
+
+  }
+
+
 }

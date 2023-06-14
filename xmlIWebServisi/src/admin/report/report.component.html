@@ -1,1 +1,15 @@
-<p>report works!</p>
+<div class="container">
+    <h1>IZVEŠTAJI</h1>
+    <div class="form">
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" [(ngModel)]="startDate">
+      <br>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" [(ngModel)]="endDate">
+      <br>
+      <button (click)="generateReport('zig')">Zig Izveštaj</button>
+      <button (click)="generateReport('autorska')">Autorska Izveštaj</button>
+      <button (click)="generateReport('patent')">Patent Izveštaj</button>
+    </div>
+  </div>
+  

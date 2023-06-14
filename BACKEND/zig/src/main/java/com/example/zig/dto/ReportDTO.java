@@ -4,7 +4,7 @@ package com.example.zig.dto;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
-@XmlRootElement
+@XmlRootElement(name = "report")
 public class ReportDTO {
 
     public String startDate;

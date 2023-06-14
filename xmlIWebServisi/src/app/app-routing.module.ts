@@ -17,6 +17,7 @@ import { ViewAllP1RequestsComponent } from 'src/admin/view-all-p1-requests/view-
 import { ViewZ1Component } from './clinet/clinet-page/view-z1/view-z1.component';
 import { ViewP1Component } from './clinet/clinet-page/view-p1/view-p1.component';
 import { ViewA1Component } from './clinet/clinet-page/view-a1/view-a1.component';
+import { ReportComponent } from 'src/admin/report/report.component';
 
 const routes: Routes = [
   { path: 'guest', component: GuestNavbarComponent,
@@ -35,6 +36,7 @@ const routes: Routes = [
     { path: 'viewA1', component: ViewAllA1RequestsComponent },
     { path: 'viewZ1', component: ViewAllZ1RequestsComponent },
     { path: 'viewP1', component: ViewAllP1RequestsComponent },
+    { path:'report',  component: ReportComponent},
     ]},
   { path: '', component: GuestPageComponent },
 ];
