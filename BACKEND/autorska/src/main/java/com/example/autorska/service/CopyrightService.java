@@ -291,4 +291,9 @@ public class CopyrightService {
         }
         return xmlDate;
     }
+
+    public List<Autorska> search(String data) throws Exception {
+        return autorskaRepository.search(data);
+
+    }
 }

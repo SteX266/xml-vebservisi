@@ -292,4 +292,9 @@ public class PatentService {
         pdfTransformer.generateHTML(zig, id);
         pdfTransformer.generatePDF(id);
     }
+
+    public List<Prijava> search(String data) throws Exception {
+        return patentRepository.search(data);
+
+    }
 }

@@ -111,5 +111,11 @@ public class PatentController {
         }
     }
 
+    @GetMapping(value = "/search/{data}", produces = MediaType.APPLICATION_XML_VALUE)
+    public ResponseEntity<List<Prijava>> search(@PathVariable String data) throws Exception {
+        List<Prijava> zahtevi = patentService.search(data);
+        return new ResponseEntity<>(zahtevi, HttpStatus.OK);
+    }
+
 
 }

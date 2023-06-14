@@ -109,4 +109,10 @@ public class CopyrightController {
     public void generateReport(@RequestBody ReportDTO reportDTO) throws JAXBException, XMLDBException, DocumentException, FileNotFoundException {
         copyrightService.generateReport(reportDTO);
     }
+
+    @GetMapping(value = "/search/{data}", produces = MediaType.APPLICATION_XML_VALUE)
+    public ResponseEntity<List<Autorska>> search(@PathVariable String data) throws Exception {
+        List<Autorska> zahtevi = copyrightService.search(data);
+        return new ResponseEntity<>(zahtevi, HttpStatus.OK);
+    }
 }
