@@ -581,7 +581,7 @@ public class Autorska {
         })
         public static class Autori {
 
-            @XmlElement(required = true)
+            @XmlElement(namespace = "http://www.ftn.uns.ac.rs/autorksa")
             protected List<Autor> autor;
 
             public Autori(AutoriDTO autori) {
@@ -653,13 +653,14 @@ public class Autorska {
                 "prezime",
                 "godinaSmrti"
             })
+
             public static class Autor {
 
-                @XmlElement(required = true)
+                @XmlElement(namespace = "http://www.ftn.uns.ac.rs/autorksa")
                 protected String ime;
-                @XmlElement(required = true)
+                @XmlElement(namespace = "http://www.ftn.uns.ac.rs/autorksa")
                 protected String prezime;
-                @XmlElement(name = "godina_smrti", required = true)
+                @XmlElement(name = "godina_smrti", required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
                 @XmlSchemaType(name = "date")
                 protected XMLGregorianCalendar godinaSmrti;
 

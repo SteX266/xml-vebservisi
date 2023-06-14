@@ -172,27 +172,113 @@
           <h4 class="form-title">Adresa</h4>
           <div class="form-group">
             <label for="ulicaIBroj">Ulica</label>
-            <input id="ulicaIBroj"  name="ulica3" type="text" class="form-control"  [(ngModel)]="prijava.punomocnik.adresa.ulica" required>
+            <input id="ulicaIBroj"  name="ulica3" type="text" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="ulicaIBroj">Broj</label>
-            <input id="ulicaIBroj"  name="Broj3" type="number" class="form-control"  [(ngModel)]="prijava.punomocnik.adresa.broj" required>
+            <input id="ulicaIBroj"  name="Broj3" type="number" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="postanskiBroj">Poštanski broj</label>
-            <input id="postanskiBroj"   name="postanskiBroj3" type="text" class="form-control"  [(ngModel)]="prijava.punomocnik.adresa.postanskiBroj" required>
+            <input id="postanskiBroj"   name="postanskiBroj3" type="text" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="mesto">Mesto</label>
-            <input id="mesto"  name="mesto3" type="text" class="form-control" [(ngModel)]="prijava.punomocnik.adresa.mesto" required>
+            <input id="mesto"  name="mesto3" type="text" class="form-control"  required>
           </div>
           <div class="form-group">
             <label for="drzava">Država prebivališta/sedišta</label>
-            <input id="drzava"   name="drzava3" type="text" class="form-control" [(ngModel)]="prijava.punomocnik.adresa.drzava" required>
+            <input id="drzava"   name="drzava3" type="text" class="form-control" required>
           </div>
             </div>
 
+            <div class="form-group">
+              <div class="form-group">
+                <h2>
+                  Podaci o autorima:
+                </h2>
 
+                <div class="form-group">
+                  <label for="prezime_podnosioca">Ime Autora:</label>
+                  <input type="text" class="form-control" name="prezime_aut" [(ngModel)]="prijava.podaciOAutorima.autor.ime">
+                </div>
+              </div>
+                <div class="form-group">
+                  <label for="prezime_podnosioca">Prezime Autora:</label>
+                  <input type="text" class="form-control" name="prezime_aut" [(ngModel)]="prijava.podaciOAutorima.autor.prezime">
+                </div>
+                <h4 class="form-title">Adresa</h4>
+                <div class="form-group">
+                  <label for="ulicaIBroj">Ulica</label>
+                  <input id="ulicaIBroj"  name="ulica3" type="text" class="form-control" [(ngModel)]="prijava.podaciOAutorima.autor.adresa.ulica" required>
+                </div>
+                <div class="form-group">
+                  <label for="ulicaIBroj">Broj</label>
+                  <input id="ulicaIBroj"  name="Broj3" type="number" class="form-control"  [(ngModel)]="prijava.podaciOAutorima.autor.adresa.broj" required>
+                </div>
+                <div class="form-group">
+                  <label for="postanskiBroj">Poštanski broj</label>
+                  <input id="postanskiBroj"   name="postanskiBroj3" type="text" class="form-control" [(ngModel)]="prijava.podaciOAutorima.autor.adresa.postanskiBroj" required>
+                </div>
+                <div class="form-group">
+                  <label for="mesto">Mesto</label>
+                  <input id="mesto"  name="mesto3" type="text" class="form-control" [(ngModel)]="prijava.podaciOAutorima.autor.adresa.mesto"  required>
+                </div>
+                <div class="form-group">
+                  <label for="drzava">Država prebivališta/sedišta</label>
+                  <input id="drzava"   name="drzava3" type="text" class="form-control" [(ngModel)]="prijava.podaciOAutorima.autor.adresa.drzava" required>
+                </div>
+                <h2>
+                  Podaci o koautorima:
+                </h2>
+                <table>
+                  <thead>
+                    <th>Broj koautora</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Godina Smrti</th>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let item of prijava.podaciOAutorima.autori.autor;
+                        let i = index
+                      "
+                    >
+                      <td>{{ i + 1 }}.</td>
+                      <td>
+                        <input
+                          type="text"
+                          id="datumPrijave1"
+                          [name]="'datumPrijave' + i"
+                          [(ngModel)]="item.ime"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          id="brojPrijave1"
+                          [name]="'brojPrijave' + i"
+                          [(ngModel)]="item.prezime"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="date"
+                          id="oznakaDrzave1"
+                          [name]="'oznakaDrzave' + i"
+                          [(ngModel)]="item.godinaSmrti"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div>
+                  <button (click)="dodajKoautora()">Додај</button>
+                  <button (click)="izbaciKoautora()">Уклони</button>
+                </div>
+                
+      </div>
         <div>
           <div class="form-group">
             <div>

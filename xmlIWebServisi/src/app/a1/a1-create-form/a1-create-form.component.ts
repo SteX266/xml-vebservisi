@@ -35,6 +35,13 @@ export class A1CreateFormComponent {
     this.service.sendRequest(this.prijava).subscribe();
 
   }
-
+  dodajKoautora() {
+    this.prijava.podaciOAutorima.autori.autor.push(
+      new AutorDTO()
+    );
+  }
+  izbaciKoautora() {
+    this.prijava.podaciOAutorima.autori.autor.pop();
+  }
 }
 
