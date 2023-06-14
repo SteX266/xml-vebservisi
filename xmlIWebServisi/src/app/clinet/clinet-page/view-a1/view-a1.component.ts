@@ -50,5 +50,16 @@ export class ViewA1Component {
     });
 
   }
+  public generatePdf(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9001/copyright/downloadPDF/" + id);
+    }});
+  }
+  
+  public generateHtml(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9001/copyright/downloadHTML/" + id);
+    }});
+  }
 }
 

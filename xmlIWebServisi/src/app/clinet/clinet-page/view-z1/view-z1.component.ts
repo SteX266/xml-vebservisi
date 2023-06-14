@@ -34,8 +34,20 @@ export class ViewZ1Component {
   }
 
   public Print(id: String) {
-    this.service.Print(id).subscribe();
+    this.service.generateDocuments(id).subscribe();
     window.open("http://localhost:9000/trademark/downloadPDF/" + id);
+  }
+
+  public generatePdf(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9000/trademark/downloadPDF/" + id);
+    }});
+  }
+  
+  public generateHtml(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9000/trademark/downloadHTML/" + id);
+    }});
   }
 
   

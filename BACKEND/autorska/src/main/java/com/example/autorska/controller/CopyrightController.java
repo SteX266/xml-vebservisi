@@ -80,7 +80,7 @@ public class CopyrightController {
 
     @RequestMapping("/downloadPDF/{fileName}")
     public void downloadPDFResource(HttpServletRequest request, HttpServletResponse response, @PathVariable("fileName") String fileName) throws IOException {
-        String path = "gen/" + fileName;
+        String path = "gen/" + fileName + ".pdf";
         File file = new File(path);
         if (file.exists()) {
             String mimeType = "application/pdf";
@@ -94,7 +94,7 @@ public class CopyrightController {
 
     @RequestMapping("/downloadHTML/{fileName}")
     public void downloadHTMLResource(HttpServletRequest request, HttpServletResponse response, @PathVariable("fileName") String fileName) throws IOException {
-        String path = "src/main/resources/data/gen/" + fileName;
+        String path = "gen/" + fileName + ".html";
         File file = new File(path);
         if (file.exists()) {
             String mimeType = "application/html";

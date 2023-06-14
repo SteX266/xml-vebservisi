@@ -72,7 +72,7 @@ export class ZigService {
     });
   }
 
-  Print(id: String) {
+  generateDocuments(id: String) {
     const xml = JsonToXML.parse('broj', id);
     const url = this.url + 'createDocuments/' + id;
     return this._http.post<any>(url, xml, {
@@ -83,6 +83,7 @@ export class ZigService {
       }),
     });
   }
+
 
 
   DeclineRequest(id: string, obrazlozenje: string) {

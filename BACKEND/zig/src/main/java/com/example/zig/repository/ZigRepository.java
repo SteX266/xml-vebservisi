@@ -22,7 +22,7 @@ import java.util.List;
 public class ZigRepository {
 
     private final String collectionId = "db/zigovi";
-    private final String collectionIdDecision = "db/resenja";
+    private final String collectionIdDecision = "db/zResenja";
 
 
     private Collection col;

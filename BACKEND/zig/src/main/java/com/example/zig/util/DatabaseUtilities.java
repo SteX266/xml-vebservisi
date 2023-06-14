@@ -171,6 +171,9 @@ public class DatabaseUtilities {
             MarshallingUtils marshallingUtils = new MarshallingUtils();
             List<Decision> resenja = new ArrayList<>();
             col = DatabaseManager.getCollection(conn.uri + collectionIdDecision, conn.user, conn.password);
+            if (col == null) {
+                return null;
+            }
             col.setProperty(OutputKeys.INDENT, "yes");
             for(String s: col.listResources()){
                 res = (XMLResource)col.getResource(s);

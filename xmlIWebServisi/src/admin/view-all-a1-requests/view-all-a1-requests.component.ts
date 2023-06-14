@@ -59,4 +59,16 @@ export class ViewAllA1RequestsComponent {
   public Refresh(): void {
     this.location.go(this.location.path());
   }
+
+  public generatePdf(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9002/patent/downloadPDF/" + id);
+    }});
+  }
+  
+  public generateHtml(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9002/patent/downloadHTML/" + id);
+    }});
+  }
 }

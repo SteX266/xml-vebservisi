@@ -74,6 +74,18 @@ export class P1Service {
     });
   }
 
+  generateDocuments(id: String) {
+    const xml = JsonToXML.parse('broj', id);
+    const url = this.url + 'createDocuments/' + id;
+    return this._http.post<any>(url, xml, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/xml',
+        'Access-Control-Allow-Origin': '*',
+        responseType: 'text',
+      }),
+    });
+  }
+
   getZahtevi() {
     return this._http.get(this.url + 'getAllUnanswered', {
       headers: new HttpHeaders().set('Content-Type', 'application/xml'),

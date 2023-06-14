@@ -32,9 +32,7 @@ export class ViewAllZ1RequestsComponent {
     'preuzmi',
   ];
 
-  public viewDetails(a: string) {
-    alert(a);
-  }
+
 
   ngOnInit(): void {
     this.service.getZahtevi().subscribe({
@@ -53,9 +51,16 @@ export class ViewAllZ1RequestsComponent {
     this.Refresh();
   }
 
-  public Print(id: String) {
-    this.service.Print(id).subscribe();
-    window.open("http://localhost:9000/trademark/downloadPDF/" + id);
+  public generatePdf(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9000/trademark/downloadPDF/" + id);
+    }});
+  }
+  
+  public generateHtml(id: String) {
+    this.service.generateDocuments(id).subscribe({next:(value)=>{
+      window.open("http://localhost:9000/trademark/downloadHTML/" + id);
+    }});
   }
   public Refresh(): void {
     this.location.go(this.location.path());
