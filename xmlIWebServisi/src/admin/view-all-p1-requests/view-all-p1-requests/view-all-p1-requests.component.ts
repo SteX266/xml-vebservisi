@@ -51,13 +51,13 @@ export class ViewAllP1RequestsComponent {
 
   public generatePdf(id: String) {
     this.service.generateDocuments(id).subscribe({next:(value)=>{
-      window.open("http://localhost:9001/copyright/downloadPDF/" + id);
+      window.open("http://localhost:9002/patent/downloadPDF/" + id);
     }});
   }
   
   public generateHtml(id: String) {
     this.service.generateDocuments(id).subscribe({next:(value)=>{
-      window.open("http://localhost:9001/copyright/downloadHTML/" + id);
+      window.open("http://localhost:9002/patent/downloadHTML/" + id);
     }});
   }
 

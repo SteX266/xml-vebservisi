@@ -24,22 +24,22 @@
       </div>
 
       <div class="row pb-2" *ngIf="podnosilacLice === 'Fizicko lice'">
-        <div class="form-group col-3">
+        <div class="form-group">
           <label for="ime_podnosioca">Ime:</label>
           <input type="text" class="form-control" name="ime_podnosioca" [(ngModel)]="prijava.podnosilacPrijave.ime">
         </div>
-        <div class="form-group col-3">
+        <div class="form-group">
           <label for="prezime_podnosioca">Prezime:</label>
           <input type="text" class="form-control" name="prezime_podnosioca" [(ngModel)]="prijava.podnosilacPrijave.prezime">
         </div>
-        <div class="form-group col-3">
+        <div class="form-group">
             <label for="prezime_podnosioca">Drzavljanstvo:</label>
             <input type="text" class="form-control" name="Drzavljanstvo" [(ngModel)]="prijava.podnosilacPrijave.adresa.drzava">
           </div>
       </div>
 
       <div class="row pb-2" *ngIf="podnosilacLice === 'Pravno lice'">
-        <div class="form-group col-4">
+        <div class="form-group">
           <label for="poslovno_ime_podnosioca">Poslovno ime:</label>
           <input type="text" class="form-control" name="poslovno_ime_podnosioca" [(ngModel)]="prijava.podnosilacPrijave.naziv">
         </div>
@@ -85,15 +85,15 @@
          
         <form  class="form-container">
             <div>
-              <div class="row pb-2" *ngIf="podnosiPunomocnik">
+              <div class="row" *ngIf="podnosiPunomocnik">
             <h2 class="form-title">Podaci punomocnika</h2>
            
-            <div class="row pb-2" >
-              <div class="form-group col-3">
+            <div class="row" >
+              <div class="form-group">
                 <label for="ime_podnosioca">Ime:</label>
                 <input type="text" class="form-control" name="ime_podnosioca2" [(ngModel)]="prijava.punomocnik.ime">
               </div>
-              <div class="form-group col-3">
+              <div class="form-group">
                 <label for="prezime_podnosioca">Prezime:</label>
                 <input type="text" class="form-control" name="prezime_podnosioca2" [(ngModel)]="prijava.punomocnik.prezime">
               </div>
@@ -130,7 +130,7 @@
           Podaci o autorskom delu
         </h2>
 
-        <div class="form-check form-group my-2 col-4" style="margin-left: 20px">
+        <div class="form-check form-group my-2 " style="margin-left: 20px">
           <input class="form-check-input"  type="checkbox"  [checked]="prerada" name="prerada"  (change)="prerada = !prerada" [(ngModel)]="prerada">
           <label class="form-check-label" for="podnosiPunomopcnik">
             Delo je prerada nekog drugog dela
@@ -147,19 +147,25 @@
           <input id="drzava"   name="altnaslov" type="text" class="form-control" [(ngModel)]="prijava.podaciONaslovu.alternativniNaslov" required>
         </div>
 
-        <div class="row pb-2" *ngIf="prerada">
+        <div class="row" *ngIf="prerada">
           <h2 class="form-title">Podaci o delu koje je preradjeno</h2>
          
-          <div class="row pb-2" >
-            <div class="form-group col-3">
+          <div class="row" >
+            <div class="form-group">
               <label for="ime_podnosioca">Naslov:</label>
               <input type="text" class="form-control" name="ime_podnosiocaa" [(ngModel)]="prijava.podaciOPreradi.naslov">
             </div>
-            <div class="form-group col-3">
-              <label for="prezime_podnosioca">Prezime:</label>
-              <input type="text" class="form-control" name="prezime_podnosiocaa" [(ngModel)]="prijava.punomocnik.prezime">
+            
+            <div class="form-group">
+              <label for="prezime_podnosioca">Ime Autora:</label>
+              <input type="text" class="form-control" name="prezime_aut" [(ngModel)]="prijava.podaciOPreradi.autor.ime">
             </div>
           </div>
+            <div class="form-group">
+              <label for="prezime_podnosioca">Prezime Autora:</label>
+              <input type="text" class="form-control" name="prezime_aut" [(ngModel)]="prijava.podaciOPreradi.autor.prezime">
+            </div>
+        
     
           
     
@@ -213,7 +219,7 @@
           <div>
           Forma Zapisa
           </div>
-        <select class="form-select" #vrstaDela aria-label="vrsta dela"  name ="forma" [(ngModel)]="prijava.vrstaDela"  >
+        <select class="form-select" #vrstaDela aria-label="vrsta dela"  name ="forma">
           <option value="STAMPANI_TEKST" selected>Stampani tekst</option>
           <option value="OPTICKI_DISK">Opticki disk</option>
           <option value="OSTALO">Ostalo</option>
@@ -229,7 +235,7 @@
           <input id="namena"   name="namena" type="text" class="form-control" [(ngModel)]="prijava.namenaDela" required>
         </div>
   
-        <div class="form-check form-group my-2 col-4" style="margin-left: 20px">
+        <div class="form-check form-group my-2" style="margin-left: 20px">
           <input class="form-check-input"  type="checkbox"  [checked]="prijava.radnomOdnosu" name="prerada" (change)="prijava.radnomOdnosu = !prijava.radnomOdnosu" [(ngModel)]="prijava.radnomOdnosu">
           <label class="form-check-label" for="podnosiPunomopcnik">
             Delo je stvoreno u radnom odnosu

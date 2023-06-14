@@ -36,9 +36,9 @@ public class TFizickoLice
     extends TLice
 {
 
-    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String ime;
-    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String prezime;
 
     /**

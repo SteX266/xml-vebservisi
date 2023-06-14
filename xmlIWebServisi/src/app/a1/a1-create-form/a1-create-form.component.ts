@@ -28,9 +28,6 @@ export class A1CreateFormComponent {
     if (this.prijava.vrstaDela === "OSTALO"){
       this.prijava.vrstaDela = this.ostalo;
     }
-    if (this.prijava.vrstaDela === "OSTALO"){
-      this.prijava.vrstaDela = this.ostalo;
-    }
     this.prijava.podaciOAutorima = new PodaciOAutorimaDTO();
     this.prijava.podaciOAutorima.autori = new AutoriDTO();
     this.prijava.podaciOAutorima.autori.autor.push(new AutorDTO("pusa","pusic"));

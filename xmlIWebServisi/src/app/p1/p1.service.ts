@@ -20,8 +20,9 @@ export class P1Service {
   
     let res = JSON.parse(result);
     if (Array.isArray(res['List']['item'])){
-      let p : PatentRequestDTO = new PatentRequestDTO();
+     
     for (let user of res.List.item){
+      let p : PatentRequestDTO = new PatentRequestDTO();
       if(user['zahtev']['podnosilacPrijave']['ime'] === undefined){ 
         p.podnosilacPrijave.ime = user['zahtev']['podnosilacPrijave']['naziv']['_text']
      }
@@ -43,7 +44,7 @@ export class P1Service {
     let user = res['List']['item']
     let p: PatentRequestDTO = new PatentRequestDTO();
     if(user['zahtev']['podnosilacPrijave']['ime'] === undefined){ 
-       p.podnosilacPrijave.ime = user['podnosilacPrijave']['naziv']['_text']
+       p.podnosilacPrijave.ime = user['zahtev']['podnosilacPrijave']['naziv']['_text']
     }
     else{
       p.podnosilacPrijave.ime = user['zahtev']['podnosilacPrijave']['ime']['_text'];

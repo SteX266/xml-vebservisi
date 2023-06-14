@@ -34,7 +34,7 @@ public class TPravnoLice
     extends TLice
 {
 
-    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/autorksa")
+    @XmlElement(required = true,namespace = "http://www.ftn.uns.ac.rs/patent")
     protected String naziv;
 
     /**
